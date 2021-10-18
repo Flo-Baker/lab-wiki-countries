@@ -1,25 +1,35 @@
-import logo from './logo.svg';
+import React, { Component } from 'react';
+import { Route, Switch } from 'react-router-dom';
 import './App.css';
+import CountriesList from './components/CountriesList.jsx';
+import Navbar from './components/Navbar.jsx';
+import countries from './countries.json';
+import CountryDetails from './components/CountryDetails.jsx';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+// see slide 7 of w3d2 for passing the route props
+
+class App extends Component {
+  render() {
+    return (
+      <div className="App">
+        {/* <h1>Hello Countries</h1> */}
+        <Navbar />
+        <div className="container">
+          <div className="row">
+            <CountriesList countries={countries} />
+            <Switch>
+              <Route
+                path="/country/:name"
+                render={(routeProps) => 
+                  <CountryDetails {...routeProps} countries={countries} title="countries" />
+                }
+              />
+            </Switch>
+          </div>
+        </div>
+      </div>
+    );
+  }
 }
 
 export default App;
