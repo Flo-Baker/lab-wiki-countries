@@ -2,26 +2,25 @@
 // Each link should be a react-router-dom Link
 // which we will use to send the country code (cca3) via the URL.
 
-// -> means to import data from the .json file?!
-
 import React from 'react';
 import { Link } from 'react-router-dom';
-// import listOfCountries from './countries.json'
-// import Navbar from './Navbar'
 
 function CountriesList(props) {
   return (
-    <div>
-      {/* <p>Test if Component is working</p> */}
-      <ul>
-        {props.countries.slice(0, 100).map((eachCountry) => (
+    <div>   
+        {props.countries.slice(0, 15).map((eachCountry) => (
           <Link to={`/country/${eachCountry.cca3}`}>
-            {eachCountry.name.common}
+            <ul class="list-group overflow-scroll">
+            <li class="list-group-item">
+            {eachCountry.flag} {eachCountry.name.common} 
+            </li>
+            </ul>
           </Link>
         ))}
-      </ul>
     </div>
   );
 }
 
 export default CountriesList;
+
+// List of Countries has to be a scrollable list on the left side with flags

@@ -5,6 +5,7 @@
 import React from 'react';
 // import CountriesList from './CountriesList';
 
+
 function CountryDetails({ match, countries }) {
     
     const foundCountry = countries.find((oneCountry) => {
@@ -17,10 +18,13 @@ function CountryDetails({ match, countries }) {
             <h3> { foundCountry.name.official }</h3>
             <p> Region { foundCountry.region }</p>
             <p> Subregion { foundCountry.subregion }</p>
-            {/* <p> Flag { foundCountry.borders }</p> */}
+            <p> Borders { foundCountry.borders }</p>
             <p> Flag { foundCountry.flag }</p>
         </div>
     )
 }
+
+// condition: if country has borders (= !empty array) show "Borders"
+// "Borders" has to be Linked so the click will get to the next country
 
 export default CountryDetails;

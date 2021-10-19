@@ -8,21 +8,24 @@ import CountryDetails from './components/CountryDetails.jsx';
 
 // see slide 7 of w3d2 for passing the route props
 
+// const AppStyle = {
+//   display: 'flex',
+//   justifyContent: ''
+// }
+
 class App extends Component {
   render() {
     return (
       <div className="App">
-        {/* <h1>Hello Countries</h1> */}
         <Navbar />
         <div className="container">
           <div className="row">
-            <CountriesList countries={countries} />
+            <CountriesList countries={ countries } />
             <Switch>
               <Route
-                path="/country/:name"
-                render={(routeProps) => 
-                  <CountryDetails {...routeProps} countries={countries} title="countries" />
-                }
+                path="/country/:name" render={(routeProps) => (
+                  <CountryDetails { ...routeProps } countries={ countries } title="countries"/>
+                )}
               />
             </Switch>
           </div>

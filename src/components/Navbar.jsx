@@ -5,14 +5,18 @@ import React, { Component } from 'react';
 class Navbar extends Component {
   render() {
     return (
-      <ul>
-      <h1>WikiCountries</h1>
-        {/* <Link to="/">Home</Link>
-        <Link to="/countries">Countries</Link>
-        <Link to="/details">Countries Details</Link> */}
-      </ul>
+        <nav class="navbar navbar-dark bg-dark">
+          <div class="container-fluid">
+            <span class="navbar-brand mb-0 h1">
+              <h1>WikiCountries</h1>
+            </span>
+          </div>
+        </nav>
     );
   }
 }
 
 export default Navbar;
+// {/* <Link to="/">Home</Link>
+//         <Link to="/countries">Countries</Link>
+//         <Link to="/details">Countries Details</Link> */}
