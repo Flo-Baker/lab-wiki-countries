@@ -8,12 +8,17 @@ import CountryDetails from './components/CountryDetails.jsx';
 
 // see slide 7 of w3d2 for passing the route props
 
-// const AppStyle = {
-//   display: 'flex',
-//   justifyContent: ''
-// }
-
 class App extends Component {
+
+  // state = {
+  //   countries: null,
+  // };
+
+  // componentDidMount() {
+
+  // }
+
+
   render() {
     return (
       <div className="App">

@@ -2,6 +2,8 @@
 // Each link should be a react-router-dom Link
 // which we will use to send the country code (cca3) via the URL.
 
+// check the list&keys lesson and do it in best practice for this component
+
 import React from 'react';
 import { Link } from 'react-router-dom';
 
